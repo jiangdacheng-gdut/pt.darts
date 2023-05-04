@@ -49,6 +49,14 @@ def data_transforms(dataset, cutout_length):
             transforms.RandomAffine(degrees=15, translate=(0.1, 0.1), scale=(0.9, 1.1), shear=0.1),
             transforms.RandomVerticalFlip()
         ]
+    elif dataset == 'cv_ids_25':
+        MEAN = [0.49139968, 0.48215827, 0.44653124]
+        STD = [0.24703233, 0.24348505, 0.26158768]
+        transf = [
+            transforms.RandomCrop(32, padding=4),
+            transforms.RandomHorizontalFlip()
+        ]
+
     else:
         raise ValueError('not expected dataset = {}'.format(dataset))
 
