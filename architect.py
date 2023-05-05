@@ -1,7 +1,7 @@
 """ Architect controls architecture of cell by computing gradients of alphas """
 import copy
 import torch
-
+   
 
 class Architect():
     """ Compute gradients of alphas """
